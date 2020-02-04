@@ -8,7 +8,7 @@ FROM richarvey/nginx-php-fpm:1.8.2
 # pdo_oci pdo_odbc pdo_pgsql pdo_sqlite pgsql phar posix pspell readline recode reflection session shmop
 # simplexml snmp soap sockets sodium spl standard sysvmsg sysvsem sysvshm tidy tokenizer wddx xml xmlreader
 #xmlrpc xmlwriter xsl zend_test zip
-RUN docker-php-ext-install pcntl bcmath
+RUN docker-php-ext-install pcntl bcmath opcache
 # mcrypt
 # 有的:mbstring json xml pdo_pgsql pgsql redis
 
@@ -19,5 +19,3 @@ RUN docker-php-ext-install pcntl bcmath
 #composer global require hirak/prestissimo
 RUN composer config -g repos.packagist composer https://php.cnpkg.org \
     && composer global require hirak/prestissimo
-
-    
