@@ -26,7 +26,8 @@ RUN composer config -g repos.packagist composer https://php.cnpkg.org \
 RUN curl -sO http://gordalina.github.io/cachetool/downloads/cachetool.phar \
   && chmod +x cachetool.phar \
   && mv cachetool.phar /usr/local/bin/cachetool \
-  && cat >> /usr/local/etc/php/conf.d/docker-php-ext-opcache.ini << EOF \
+  && echo ""
+  && cat >> /usr/local/etc/php/conf.d/docker-php-ext-opcache.ini <<'EOF' \
   opcache.validate_timestamps=0    //生产环境中配置为0 \
   opcache.revalidate_freq=0    //检查脚本时间戳是否有更新时间 \
   opcache.memory_consumption=128    //Opcache的共享内存大小，以M为单位 \
