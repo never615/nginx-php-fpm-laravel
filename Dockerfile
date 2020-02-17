@@ -1,7 +1,13 @@
 FROM richarvey/nginx-php-fpm:1.8.2
 
+# 设置时区 Asia/Shanghai
+RUN apk add tzdata \
+  && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+  && echo "Asia/Shanghai" >  /etc/timezone
+
 #RUN apk update
 #RUN apk add openldap-dev
+
 
 # bcmath bz2 calendar ctype curl dba dom enchant exif fileinfo filter ftp gd gettext gmp hash iconv imap
 # interbase intl json ldap mbstring mysqli oci8 odbc opcache pcntl pdo pdo_dblib pdo_firebird pdo_mysql
