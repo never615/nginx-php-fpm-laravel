@@ -64,7 +64,7 @@ RUN docker-php-ext-install pcntl bcmath opcache
 
 # 并行下载支持
 # composer global require hirak/prestissimo
-RUN composer config -g repos.packagist composer https://php.cnpkg.org \
+RUN composer config -g repos.packagist composer https://mirrors.aliyun.com/composer/ \
   && composer global require hirak/prestissimo
 
 # 安装opcache tool
